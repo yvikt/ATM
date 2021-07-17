@@ -1,0 +1,17 @@
+{
+    "name": "test_task/atm",
+    "description": "test task",
+    "authors": [
+        {
+            "name": "Viktor Yakovenko",
+            "email": "yakovenko.viktor.box@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Api\\": "Api/",
+            "Lib\\": "Lib/"
+        }
+    }
+}
