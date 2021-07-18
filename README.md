@@ -13,7 +13,7 @@ Class ATM is inherited from GenericBankMachine and extends it.
 As you can see there are other types of Bank equipment like Terminal and POS.
 Also, I have decided to create something like API. Of course its not real API, just fake.
 
-I have used int type fo storing money in cents, because float doesn't give us required precision.
+I have used int type for storing money in cents, because float doesn't give us required precision.
 
 You can play with it by simple running main.php in cli.
 Be free to change any values in methods get_money and put_money ;-)
