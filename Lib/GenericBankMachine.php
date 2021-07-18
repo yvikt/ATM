@@ -37,7 +37,7 @@ abstract class GenericBankMachine
         $this->pin = $pin;
     }
 
-    // check credential
+    // check credentials
     public function validate() :bool
     {
         if(BankApi::is_connected()) {
@@ -58,8 +58,4 @@ abstract class GenericBankMachine
         return BankApi::check_client_pin($this->pin);
     }
 
-    public function print_receipt() :string
-    {
-        return 'This is your receipt';
-    }
 }

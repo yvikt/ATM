@@ -7,7 +7,7 @@ namespace Api;
 /**
  * Class BankApi
  * @package Lib
- * Fake Bank Api - just to simulate connection between ATM/Terminal/PointOfSale and Bank database
+ * Fake Bank API - just to simulate connection between ATM/Terminal/PointOfSale and Bank API
  */
 class BankApi
 {
@@ -20,8 +20,8 @@ class BankApi
     {
         self::$client_id = $client_id;
         self::$client_pin = $client_pin;
-        self::$balance = $balance;
-        self::$overdraft = $overdraft;
+        self::$balance = $balance * 100; // store money in cents
+        self::$overdraft = $overdraft * 100;
     }
 
     static function is_connected() :bool
@@ -45,11 +45,16 @@ class BankApi
 
     static function update_balance($amount) :bool
     {
-        if(self::$overdraft > self::$balance + $amount){
-            self::$balance += $amount;
-            return true;
+        if($amount < 0){
+            if(self::$balance + $amount >= self::$overdraft * -1){
+                self::$balance += $amount;
+                return true;
+            }
+            return false;
         }
-        return false;
+
+        self::$balance += $amount;
+        return true;
     }
 
 }

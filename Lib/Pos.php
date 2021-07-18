@@ -8,7 +8,7 @@ namespace Lib;
  * @package Lib
  * POS is machine that can only accept payments for goods and services
  */
-class Pos
+class Pos extends GenericBankMachine
 {
     protected array $operations = [
         'make a payment'
